@@ -5,6 +5,9 @@
 body {
   background: #e9e9e9;
 }
+a {
+  text-decoration: none;
+}
 .body--container {
   position: relative;
 }
@@ -172,4 +175,37 @@ header nav ul li:active {
 }
 .project .pj .description .description--desc {
   font-size: 16px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 50px 0;
+  text-align: center;
+}
+.contact .description--title {
+}
+.contact ul {
+  width: 370px;
+  margin: 30px auto;
+}
+.contact ul li {
+  display: flex;
+  align-items: center;
+  margin: 16px;
+}
+.contact ul li .contact-icon {
+  display: block;
+  margin-right: 16px;
+  width: 70px;
+  height: 70px;
+}
+.contact ul li a {
+  color: #000;
+  font-size: 24px;
+}
+.conatac ul li a:hover {
+  color: #e9e9e9;
+}
+.conatac ul li a:active {
+  color: #000;
 }
