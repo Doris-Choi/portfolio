@@ -196,8 +196,8 @@ header nav ul li:active {
 .contact ul li .contact-icon {
   display: block;
   margin-right: 16px;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
 }
 .contact ul li a {
   color: #000;
@@ -208,4 +208,22 @@ header nav ul li:active {
 }
 .conatac ul li a:active {
   color: #000;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 150px;
+  background: lightgray;
+}
+footer div {
+  margin: 0 30px;
+  color: darkgray;
+}
+footer div a {
+  color: darkgray;
+  text-decoration: underline dashed;
+  line-height: 1.5;
 }
