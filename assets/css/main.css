@@ -1,0 +1,82 @@
+/* COMMON */
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #e9e9e9;
+}
+.body--container {
+  position: relative;
+}
+.inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+/* DESCRIPTION */
+.description .title {
+  margin-bottom: 18px;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.description .desc {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* HEADER */
+header {
+}
+header .profile {
+  display: flex;
+  padding: 80px 60px 60px;
+}
+header .profile .pic {
+  width: 300px;
+  height: 300px;
+  background-image: url('../img/profile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+header .profile .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 60px;
+  width: 55%;
+}
+header .profile .description h1 {
+  font-size: 72px;
+}
+header .profile .description p {
+}
+header nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: lightgray;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+header nav ul {
+  display: flex;
+  padding: 15px;
+}
+header nav ul li {
+  width: 70px;
+  margin-right: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+header nav ul li:hover {
+  color: lightblue;
+}
+header nav ul li:active {
+  color: darkblue;
+}
