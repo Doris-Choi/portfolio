@@ -134,16 +134,18 @@ header nav ul li:active {
 }
 .skills .wrapper ul {
   display: flex;
+  flex-wrap: wrap;
 }
 .skills .wrapper ul li {
-  margin-bottom: 20px;
-  padding-right: 40px;
+  margin: 0 25px 20px;
 }
 .skills .wrapper ul li .icon {
   margin-bottom: 16px;
   width: 80px;
   height: 80px;
-  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 .skills .wrapper ul li .icon span {
   font-size: 18px;
