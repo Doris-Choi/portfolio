@@ -1,3 +1,14 @@
+// NAVI Link
+const lis = document.querySelectorAll('nav ul li');
+for (let li of lis) {
+  li.addEventListener('click', (e) => {
+    const elem =
+      document.querySelector('.' + li.innerText.toLowerCase()) ||
+      document.querySelector('header');
+    window.scrollTo({ top: elem.offsetTop - 50, behavior: 'smooth' });
+  });
+}
+
 // SKILLS section
 `field
  ㄴ subject: field 대표 이름
@@ -98,4 +109,4 @@ for (let field in skills) {
   }
   elem += `</ul></div>`;
 }
-document.querySelector('.skill').innerHTML = elem;
+document.querySelector('.skills').innerHTML = elem;
