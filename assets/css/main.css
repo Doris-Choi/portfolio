@@ -1,9 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Pangolin&display=swap');
+
+/* VARIABLES */
+:root {
+  --main-bg-color: #f2f2f2;
+  --light-bg-color: #fafafa;
+  --dark-bg-color: #d7d7d7;
+  --main-font-color: #333;
+  --light-font-color: #f6f6f6;
+  --dark-font-color: #000;
+  --border-color: #d7d7d7;
+}
+
 /* COMMON */
 * {
+  color: var(--main-font-color);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
   box-sizing: border-box;
 }
 body {
-  background: #e9e9e9;
+  background: var(--main-bg-color);
 }
 a {
   text-decoration: none;
@@ -32,6 +49,8 @@ a {
 
 /* HEADER */
 header {
+  width: 880px;
+  margin: 0 auto;
 }
 header .profile {
   display: flex;
@@ -58,6 +77,7 @@ header .profile .description {
   justify-content: center;
 }
 header .profile .description--title {
+  font-family: 'Pangolin', cursive;
   font-size: 72px;
 }
 header .profile .description--desc {
@@ -67,7 +87,7 @@ header nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: lightgray;
+  background: var(--dark-bg-color);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   z-index: 1;
@@ -86,10 +106,10 @@ header nav ul li:last-child {
   margin-right: 8px;
 }
 header nav ul li:hover {
-  color: lightblue;
+  color: var(--light-font-color);
 }
 header nav ul li:active {
-  color: darkblue;
+  color: var(--dark-font-color);
 }
 
 /* ABOUT */
@@ -111,7 +131,7 @@ header nav ul li:active {
 }
 .about .description--desc {
   flex: 1;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 /* SKILLS */
@@ -127,7 +147,7 @@ header nav ul li:active {
   margin: 20px 0;
   padding-left: 20px;
   padding-bottom: 8px;
-  border-bottom: 1px dashed darkolivegreen;
+  border-bottom: 1px dashed var(--border-color);
   font-size: 22px;
   font-weight: 700;
   text-align: left;
@@ -163,24 +183,25 @@ header nav ul li:active {
   display: flex;
   margin: 40px auto;
   max-width: 1100px;
-  border: 1px solid #d7d7d7;
+  border: 1px solid var(--border-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .projects .pj .thumbnail {
   flex: none;
   width: 300px;
-  background-color: lightgray;
+  background-color: var(--dark-bg-color);
 }
 .projects .pj .description {
   flex: 1;
   padding: 30px;
+  background-color: var(--light-bg-color);
   text-align: left;
 }
 .projects .pj .description .description--title {
   font-size: 30px;
 }
 .projects .pj .description .description--desc {
-  font-size: 16px;
+  font-size: 17px;
 }
 
 /* CONTACT */
@@ -191,7 +212,7 @@ header nav ul li:active {
 .contact .description--title {
 }
 .contact ul {
-  width: 370px;
+  width: 350px;
   margin: 30px auto;
 }
 .contact ul li {
@@ -206,14 +227,8 @@ header nav ul li:active {
   height: 60px;
 }
 .contact ul li a {
-  color: #000;
+  color: var(--main-font-color);
   font-size: 24px;
-}
-.conatac ul li a:hover {
-  color: #e9e9e9;
-}
-.conatac ul li a:active {
-  color: #000;
 }
 
 /* FOOTER */
@@ -222,17 +237,15 @@ footer {
   flex-direction: column;
   justify-content: center;
   height: 150px;
-  background: lightgray;
+  background: var(--dark-bg-color);
 }
 footer div {
   margin: 0 30px;
-  color: darkgray;
   line-height: 1.25;
 }
 footer div:first-child {
   margin-bottom: 16px;
 }
 footer div a {
-  color: darkgray;
   text-decoration: underline dashed;
 }
