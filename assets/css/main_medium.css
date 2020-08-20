@@ -44,6 +44,8 @@ header .profile .pic {
 }
 .about .description--title {
   margin: 0 auto 15px;
+  width: 100%;
+  text-align: center;
 }
 
 /* SKILLS */
