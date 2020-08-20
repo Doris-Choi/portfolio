@@ -1,0 +1,44 @@
+/* HEADER */
+header .profile .pic {
+  width: 80vw;
+  height: 80vw;
+}
+header .profile .description--title {
+  font-size: 15vw;
+}
+header .profile .description--desc {
+  font-size: 5vw;
+}
+
+/* SKILLS */
+.skills .wrapper ul li {
+  margin: 0 15px 15px;
+}
+.skills .wrapper ul li .icon {
+  width: 15vw;
+}
+.skills .wrapper ul li .icon span {
+  font-size: 16px;
+}
+
+/* PROJECTS */
+.projects .project-box {
+  display: block;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* CONTACT */
+.contact ul {
+  width: 100%;
+}
+.contact ul li {
+  margin: 15px 30px;
+}
+.contact ul li .contact-icon {
+  width: 45px;
+  height: 45px;
+}
+.contact ul li a {
+  font-size: 6vw;
+}

@@ -2,9 +2,33 @@
 header {
   width: auto;
 }
+#toggle-btn {
+  display: block;
+}
+header .toggle {
+  display: none;
+}
+header .toggle.on {
+  display: block;
+}
+header nav {
+  width: 100vw;
+  background-color: rgba(215, 215, 215, 0.7);
+  border-radius: 0;
+}
+header nav ul {
+  display: block;
+  padding: 20px;
+}
+header nav ul li {
+  padding: 10px;
+  width: 100%;
+  font-size: 18px;
+  border-bottom: 1px dashed var(--light-bg-color);
+}
 header .profile {
   display: block;
-  padding-bottom: 30px;
+  padding: 30px 0;
   text-align: center;
 }
 header .profile .pic {
@@ -27,6 +51,7 @@ header .profile .pic {
   margin: 30px auto;
 }
 .skills .wrapper h3 {
+  padding-left: 0;
   text-align: center;
 }
 .skills .wrapper ul {

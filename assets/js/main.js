@@ -5,9 +5,33 @@ for (let li of lis) {
     const elem =
       document.querySelector('.' + li.innerText.toLowerCase()) ||
       document.querySelector('header');
-    window.scrollTo({ top: elem.offsetTop - 50, behavior: 'smooth' });
+    window.scrollTo({ top: elem.offsetTop - 30, behavior: 'smooth' });
   });
 }
+
+// Toggle Button
+const toggles = document.querySelectorAll('.toggle');
+const toggleBtn = document.getElementById('toggle-btn');
+
+function toggleOn() {
+  [].forEach.call(toggles, (toggle) => {
+    toggle.classList.toggle('on');
+  });
+}
+function offElements() {
+  [].forEach.call(toggles, (toggle) => {
+    toggle.classList.remove('on');
+  });
+}
+
+toggleBtn.addEventListener('click', () => {
+  toggleOn();
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 800) {
+    offElements();
+  }
+});
 
 // SKILLS section
 `field
@@ -16,7 +40,6 @@ for (let li of lis) {
     ㄴ skill(각 스킬 별)
        ㄴ name: 스킬 이름
        ㄴ icon: icon의 svg 코드`;
-
 const skills = {
   // Front-End
   frontEnd: {
