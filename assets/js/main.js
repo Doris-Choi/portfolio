@@ -3,9 +3,10 @@ const lis = document.querySelectorAll('nav ul li');
 for (let li of lis) {
   li.addEventListener('click', (e) => {
     const elem =
-      document.querySelector('.' + li.innerText.toLowerCase()) ||
+      document.querySelector(`.${li.innerText.toLowerCase()}`) ||
       document.querySelector('header');
     window.scrollTo({ top: elem.offsetTop - 30, behavior: 'smooth' });
+    offElements();
   });
 }
 
@@ -28,9 +29,7 @@ toggleBtn.addEventListener('click', () => {
   toggleOn();
 });
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 800) {
-    offElements();
-  }
+  if (window.innerWidth > 800) offElements();
 });
 
 // SKILLS section

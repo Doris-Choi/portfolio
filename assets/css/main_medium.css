@@ -13,7 +13,7 @@ header .toggle.on {
 }
 header nav {
   width: 100vw;
-  background-color: rgba(215, 215, 215, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 0;
 }
 header nav ul {
@@ -23,8 +23,9 @@ header nav ul {
 header nav ul li {
   padding: 10px;
   width: 100%;
-  font-size: 18px;
-  border-bottom: 1px dashed var(--light-bg-color);
+  color: var(--light-font-color);
+  font-size: 16px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 header .profile {
   display: block;
@@ -74,5 +75,4 @@ header .profile .pic {
 
 /* CONTACT */
 .contact {
-  padding: 30px 0;
 }

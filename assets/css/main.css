@@ -15,7 +15,7 @@
 * {
   color: var(--main-font-color);
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 400;
   box-sizing: border-box;
 }
@@ -37,9 +37,10 @@ a {
 /* DESCRIPTION */
 .description--title {
   margin-bottom: 18px;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.25;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 .description--desc {
   font-size: 20px;
@@ -70,9 +71,10 @@ header nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--dark-bg-color);
+  background: rgba(0, 0, 0, 0.3);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 header nav ul {
@@ -101,7 +103,7 @@ header .profile {
   padding: 70px 0 60px;
 }
 header .profile .pic {
-  margin-right: 50px;
+  margin: 0 30px;
   flex: none;
   width: 300px;
   height: 300px;
@@ -110,6 +112,7 @@ header .profile .pic {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
+  box-shadow: 5px 3px 7px rgba(0, 0, 0, 0.3);
   text-indent: -9999px;
 }
 header .profile .description {
@@ -121,8 +124,11 @@ header .profile .description {
 header .profile .description--title {
   font-family: 'Pangolin', cursive;
   font-size: 72px;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 header .profile .description--desc {
+  text-align: center;
 }
 
 /* ABOUT */
@@ -139,12 +145,13 @@ header .profile .description--desc {
 }
 .about .description--title {
   width: 200px;
-  margin-right: 60px;
+  margin-right: 50px;
   margin-bottom: 0;
+  text-align: center;
 }
 .about .description--desc {
   flex: 1;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 /* SKILLS */
@@ -178,14 +185,14 @@ header .profile .description--desc {
 }
 .skills .wrapper ul li .icon {
   margin-bottom: 16px;
-  width: 80px;
-  height: 80px;
+  width: 45px;
+  height: 45px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
 .skills .wrapper ul li .icon span {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 /* PROJECTS */
@@ -216,10 +223,10 @@ header .profile .description--desc {
   text-align: left;
 }
 .projects .project-box .description .description--title {
-  font-size: 30px;
+  font-size: 25px;
 }
 .projects .project-box .description .description--desc {
-  font-size: 17px;
+  font-size: 14px;
 }
 
 /* CONTACT */
@@ -230,23 +237,24 @@ header .profile .description--desc {
 .contact .description--title {
 }
 .contact ul {
-  width: 350px;
+  width: 285px;
   margin: 30px auto;
 }
 .contact ul li {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 16px;
 }
 .contact ul li .contact-icon {
   display: block;
   margin-right: 16px;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
 }
 .contact ul li a {
   color: var(--main-font-color);
-  font-size: 24px;
+  font-size: 18px;
 }
 
 /* FOOTER */
@@ -254,15 +262,16 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 150px;
+  height: 120px;
   background: var(--dark-bg-color);
+  font-size: 12px;
 }
 footer div {
   margin: 0 30px;
   line-height: 1.25;
 }
 footer div:first-child {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 footer div a {
   text-decoration: underline dashed;
