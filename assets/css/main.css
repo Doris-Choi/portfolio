@@ -9,19 +9,39 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 5;
+  background-color: rgba(39, 60, 117, 0.9);
+  color: #fff;
 }
 nav ul {
   display: flex;
-  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 nav ul li {
-  width: 150px;
+  width: 25%;
   padding: 10px;
-  cursor: pointer;
   text-align: center;
+  cursor: pointer;
+}
+nav ul li:hover {
+  color: #7f8fa6;
+}
+@keyframes click {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 nav ul li:active {
+  color: #fff;
+  animation: click 0.2s;
 }
 .toggle {
   display: none;
@@ -103,7 +123,7 @@ nav ul li:active {
   font-weight: 700;
 }
 .about .edu {
-  margin: 2rem;
+  margin: 2.5rem;
   margin-right: 1rem;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -165,10 +185,6 @@ nav ul li:active {
   font-weight: 700;
   text-align: center;
 }
-/* .skills .inner > div {
-  display: flex;
-  justify-content: center;
-} */
 .skills .group {
   margin: 0 10px 10px;
 }
@@ -214,8 +230,25 @@ nav ul li:active {
 }
 
 .projects {
-  display: block;
   width: 100%;
-  height: 500px;
-  background: palegreen;
+}
+.projects h2 {
+  margin-bottom: 1rem;
+  padding: 3rem 0;
+  color: #273c75;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+.projects .inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  grid-auto-rows: 200px;
+  grid-auto-flow: row dense;
+  gap: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }

@@ -103,7 +103,7 @@ const groups = [
       },
       {
         name: 'R',
-        level: 2,
+        level: 1,
         icon: 'fab fa-r-project',
       },
       {
