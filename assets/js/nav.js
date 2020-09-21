@@ -1,4 +1,4 @@
-const list = ['Home', 'Introduce', 'Skill', 'Project'];
+const list = ['Home', 'About', 'Skills', 'Projects'];
 const nav = document.querySelector('nav');
 
 const handleClick = (e) => {

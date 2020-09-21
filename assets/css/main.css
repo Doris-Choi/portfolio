@@ -38,7 +38,7 @@ nav ul li:active {
   justify-content: center;
   max-width: 1024px;
   margin: 0 auto;
-  padding: 4rem 0 2rem;
+  padding: 3.5rem 0 2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .home .inner img {
@@ -85,21 +85,75 @@ nav ul li:active {
   text-decoration: none;
 }
 
-.introduce {
-  display: block;
+/* INTRODUCE */
+.about {
   width: 100%;
-  height: 500px;
-  background: peru;
+}
+.about .inner {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1024px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.about h2 {
+  margin: 1rem;
+  color: #273c75;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.about .edu {
+  margin: 2rem;
+  margin-right: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.about .edu h2 {
+}
+.about .edu ul li {
+  margin-bottom: 1rem;
+  padding-left: 100px;
+  position: relative;
+}
+.about .edu ul li h4 {
+  position: absolute;
+  left: 10px;
+  color: #7f8fa6;
+  font-size: 1.25rem;
+}
+.about .edu ul li .campus {
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+}
+.about .edu ul li .major {
+  width: 260px;
+  margin-bottom: 5px;
+}
+.about .edu ul li .period {
+  margin-bottom: 5px;
+  color: #718093;
+}
+.about .intro {
+  margin: 2rem;
+  margin-left: 1rem;
+  border-radius: 15px;
+}
+.about .intro {
+}
+.about .intro p {
+  margin: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.3;
 }
 
-.skill {
+.skills {
   display: block;
   width: 100%;
   height: 500px;
   background: palevioletred;
 }
 
-.project {
+.projects {
   display: block;
   width: 100%;
   height: 500px;
