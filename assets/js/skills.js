@@ -1,110 +1,169 @@
-export const skills = {
-  // Front-End
-  frontEnd: {
-    subject: 'Front-End',
-    items: {
-      html: {
-        name: 'HTML',
-        icon:
-          'https://seeklogo.com/images/H/html5-logo-EF92D240D7-seeklogo.com.png',
+const skills = document.querySelector('.skills');
+const skillInner = document.createElement('div');
+skillInner.classList.add('inner');
+
+const groups = [
+  {
+    name: 'Front-end',
+    skills: [
+      {
+        name: 'HTML5',
+        level: 3,
+        icon: 'fab fa-html5',
       },
-      css: {
-        name: 'CSS',
-        icon:
-          'https://seeklogo.com/images/C/css3-logo-8724075274-seeklogo.com.png',
+      {
+        name: 'CSS3',
+        level: 3,
+        icon: 'fab fa-css3-alt',
       },
-      sass: {
-        name: 'Sass/SCSS',
-        icon:
-          'https://seeklogo.com/images/S/sass-logo-EFE1469B2C-seeklogo.com.png',
-      },
-      javascript: {
+      {
         name: 'JavaScript',
-        icon:
-          'https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png',
+        level: 3,
+        icon: 'fab fa-js',
       },
-      typescript: {
+      {
+        name: 'j-query',
+        level: 1,
+        icon: 'fas fa-code',
+      },
+      {
+        name: 'React.js',
+        level: 2,
+        icon: 'fab fa-react',
+      },
+      {
         name: 'TypeScript',
-        icon:
-          'https://seeklogo.com/images/T/typescript-logo-B29A3F462D-seeklogo.com.png',
+        level: 1,
+        icon: 'fas fa-file-alt',
       },
-      webpack: {
-        name: 'Webpack',
-        icon:
-          'https://seeklogo.com/images/W/webpack-logo-9E66EE203A-seeklogo.com.png',
+      {
+        name: 'Sass/SCSS',
+        level: 3,
+        icon: 'fab fa-sass',
       },
-      reactjs: {
-        name: 'React JS',
-        icon: 'assets/img/reactjs.png',
-      },
-      redux: {
-        name: 'Redux',
-        icon:
-          'https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png',
-      },
-    },
+    ],
   },
-  // Back-End & Database
-  backEnd: {
-    subject: 'Back-End & Database',
-    items: {
-      python: {
-        name: 'python',
-        icon:
-          'https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png',
+  {
+    name: 'Back-end & Database',
+    skills: [
+      {
+        name: 'Node.js',
+        level: 2,
+        icon: 'fab fa-node-js',
       },
-      nodejs: {
-        name: 'Node JS',
-        icon:
-          'https://seeklogo.com/images/N/node-node-js-logo-81A4CC16D2-seeklogo.com.png',
+      {
+        name: 'Express.js',
+        level: 2,
+        icon: 'fas fa-clipboard',
       },
-      express: {
-        name: 'Express',
-        icon: 'assets/img/express.png',
-      },
-      mysql: {
+      {
         name: 'MySQL',
-        icon:
-          'https://seeklogo.com/images/M/MySQL-logo-F6FF285A58-seeklogo.com.png',
+        level: 2,
+        icon: 'fas fa-database',
       },
-    },
-  },
-  // etc
-  etc: {
-    subject: 'ETC',
-    items: {
-      c: {
+      {
         name: 'C',
-        icon: 'assets/img/c.png',
+        level: 1,
+        icon: 'fas fa-laptop',
       },
-      cpp: {
+      {
         name: 'C++',
-        icon: 'assets/img/cpp.png',
+        level: 1,
+        icon: 'fas fa-laptop-medical',
       },
-      //   https://bashlogo.com/img/symbol/png/monochrome_dark.png
-      linux: {
-        name: 'Linux',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg',
-      },
-      github: {
-        name: 'GitHub',
-        icon: 'assets/img/github.svg',
-      },
-    },
+    ],
   },
-  // Data Analysis
-  dataAnalysis: {
-    subject: 'Data Analysis',
-    items: {
-      tensorflow: {
+  {
+    name: 'ETC',
+    skills: [
+      {
+        name: 'git/GitHub',
+        level: 2,
+        icon: 'fab fa-github',
+      },
+      {
+        name: 'JIRA',
+        level: 1,
+        icon: 'fab fa-jira',
+      },
+      {
+        name: 'Slack',
+        level: 2,
+        icon: 'fab fa-slack',
+      },
+      {
+        name: 'python',
+        level: 2,
+        icon: 'fab fa-python',
+      },
+      {
         name: 'TensorFlow',
-        icon:
-          'https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg',
+        level: 2,
+        icon: 'fas fa-graduation-cap',
       },
-      r: {
+      {
         name: 'R',
-        icon: 'assets/img/r.svg',
+        level: 2,
+        icon: 'fab fa-r-project',
       },
-    },
+      {
+        name: 'Google Analytics',
+        level: 2,
+        icon: 'fab fa-google',
+      },
+      {
+        name: 'Firebase',
+        level: 1,
+        icon: 'fas fa-fire',
+      },
+    ],
   },
+];
+
+const skillItem = (skill) => {
+  const li = document.createElement('li');
+  const icon = document.createElement('i');
+  const name = document.createElement('span');
+  const level = document.createElement('div');
+
+  icon.className = skill.icon;
+  name.innerText = skill.name;
+  level.innerText = `(LEVEL: ${skill.level})`;
+
+  li.appendChild(icon);
+  li.appendChild(name);
+  li.appendChild(level);
+
+  return li;
 };
+
+const skillGroup = (group) => {
+  const div = document.createElement('div');
+  const title = document.createElement('h4');
+  const ul = document.createElement('ul');
+
+  div.classList.add('group');
+  title.innerText = group.name;
+  group.skills.forEach((skill) => ul.appendChild(skillItem(skill)));
+
+  div.appendChild(title);
+  div.appendChild(ul);
+
+  return div;
+};
+
+const loadSkills = () => {
+  const title = document.createElement('h2');
+  const div = document.createElement('div');
+  title.innerText = 'Skills';
+  skillInner.appendChild(title);
+  groups.forEach((group) => div.appendChild(skillGroup(group)));
+  skillInner.appendChild(div);
+};
+
+function init() {
+  loadSkills();
+  skills.appendChild(skillInner);
+}
+
+init();
