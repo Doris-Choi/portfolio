@@ -25,7 +25,7 @@ const contactItems = [
 
 const renderPic = () => {
   const image = new Image();
-  image.src = `/assets/img/profile.png`;
+  image.src = `./assets/img/profile.png`;
   inner.appendChild(image);
 };
 
