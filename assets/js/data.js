@@ -147,7 +147,7 @@ const projData = [
     skills: ['HTML', 'CSS', 'Vanila JS', 'Font Awesome'],
     feats: [
       '연락처별 연결 방식 구현',
-      'Skill별 상세보기 (모달)',
+      'Skill별 상세보기',
       'Project별 상세보기 (모달)',
       '반응형 웹사이트 구현',
     ],

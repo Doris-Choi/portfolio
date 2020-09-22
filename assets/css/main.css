@@ -174,16 +174,55 @@ nav ul li:active {
   color: #fff;
 }
 .skills .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1024px;
   margin: 0 auto;
   padding: 3rem 0;
   transform: skewY(3deg);
 }
 .skills h2 {
+  position: relative;
+  width: 100px;
   margin-bottom: 1rem;
   font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
+}
+.skills h2 i {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  color: #7f8fa6;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.skills h2 i div {
+  position: absolute;
+  top: -24px;
+  left: 48px;
+  width: 230px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  text-align: left;
+}
+.skills h2 i div:after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: -20px;
+  border-top: 10px solid transparent;
+  border-left: 0 solid transparent;
+  border-right: 20px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 10px solid transparent;
+}
+.skills h2 i div.hidden {
+  display: none;
 }
 .skills .group {
   margin: 0 10px 10px;
