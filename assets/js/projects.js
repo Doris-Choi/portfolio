@@ -1,93 +1,79 @@
+import openModal from './modal.js';
+import { projData } from './data.js';
+
 const projects = document.querySelector('.projects');
 const projInner = document.createElement('div');
 projInner.classList.add('inner');
 
-const data = [
-  {
-    name: 'Portfolio',
-    desc: '현재 포트폴리오 사이트',
-    url: 'https://doyoungchoi.github.io/portfolio/',
-    skills: ['HTML', 'CSS', 'Vanila JS', 'Font Awesome'],
-    feats: [
-      '연락처별 연결 방식 구현',
-      'Skill별 상세보기 (모달)',
-      'Project별 상세보기 (모달)',
-      '반응형 웹사이트 구현',
-    ],
-  },
-  {
-    name: 'Portfolio',
-    desc: '현재 포트폴리오 사이트',
-    url: 'https://doyoungchoi.github.io/portfolio/',
-    skills: ['HTML', 'CSS', 'Vanila JS', 'Font Awesome'],
-    feats: [
-      '연락처별 연결 방식 구현',
-      'Skill별 상세보기 (모달)',
-      'Project별 상세보기 (모달)',
-      '반응형 웹사이트 구현',
-    ],
-  },
-  {
-    name: 'Portfolio',
-    desc: '현재 포트폴리오 사이트',
-    url: 'https://doyoungchoi.github.io/portfolio/',
-    skills: ['HTML', 'CSS', 'Vanila JS', 'Font Awesome'],
-    feats: [
-      '연락처별 연결 방식 구현',
-      'Skill별 상세보기 (모달)',
-      'Project별 상세보기 (모달)',
-      '반응형 웹사이트 구현',
-    ],
-  },
-  {
-    name: 'Portfolio',
-    desc: '현재 포트폴리오 사이트',
-    url: 'https://doyoungchoi.github.io/portfolio/',
-    skills: ['HTML', 'CSS', 'Vanila JS', 'Font Awesome'],
-    feats: [
-      '연락처별 연결 방식 구현',
-      'Skill별 상세보기 (모달)',
-      'Project별 상세보기 (모달)',
-      '반응형 웹사이트 구현',
-    ],
-  },
-  {
-    name: 'Portfolio',
-    desc: '현재 포트폴리오 사이트',
-    url: 'https://doyoungchoi.github.io/portfolio/',
-    skills: ['HTML', 'CSS', 'Vanila JS', 'Font Awesome'],
-    feats: [
-      '연락처별 연결 방식 구현',
-      'Skill별 상세보기 (모달)',
-      'Project별 상세보기 (모달)',
-      '반응형 웹사이트 구현',
-    ],
-  },
-];
+const listItem = (text) => {
+  const li = document.createElement('li');
+  li.innerText = text;
+  return li;
+};
 
-const projectItem = (project) => {
+const projDetail = (e) => {
+  openModal();
+  let curr = e.target;
+  while (curr.tagName !== 'LI') {
+    curr = curr.parentNode;
+  }
+  const data = projData.filter((proj) => proj.id === curr.className * 1)[0];
+  // detail
+  const content = document.querySelector('.modal-content');
+  const title = document.createElement('h2');
+  const desc = document.createElement('p');
+  const button = document.createElement('a');
+  const skillTitle = document.createElement('h3');
+  const skillUl = document.createElement('ul');
+  const featTitle = document.createElement('h3');
+  const featUl = document.createElement('ul');
+
+  title.innerText = data.name;
+  desc.innerText = data.desc;
+  button.innerText = '링크로 연결하기🔗';
+  button.href = data.url;
+  button.target = '_blank';
+  skillTitle.innerText = '사용 스킬';
+  skillUl.classList.add('skill-container');
+  featTitle.innerText = '기능 사항';
+  featUl.classList.add('feat-container');
+  data.skills.forEach((skill) => skillUl.appendChild(listItem(skill)));
+  data.feats.forEach((feat) => featUl.appendChild(listItem(feat)));
+
+  content.appendChild(title);
+  content.appendChild(desc);
+  content.appendChild(button);
+  content.appendChild(skillTitle);
+  content.appendChild(skillUl);
+  content.appendChild(featTitle);
+  content.appendChild(featUl);
+};
+
+const projItem = (proj) => {
   const li = document.createElement('li');
   const title = document.createElement('h4');
   const desc = document.createElement('div');
 
-  title.innerText = project.name;
-  desc.innerHTML = project.desc;
+  li.classList.add(proj.id);
+  title.innerText = proj.name;
+  desc.innerHTML = proj.desc;
 
+  li.addEventListener('click', projDetail);
   li.appendChild(title);
   li.appendChild(desc);
 
   return li;
 };
 
-const projectList = (data) => {
+const projList = (projs) => {
   const ul = document.createElement('ul');
-  data.forEach((project) => ul.appendChild(projectItem(project)));
+  projs.forEach((proj) => ul.appendChild(projItem(proj)));
   return ul;
 };
 
-const loadProject = () => {
+const loadProj = () => {
   const title = document.createElement('h2');
-  const ul = projectList(data);
+  const ul = projList(projData);
   title.innerText = 'Projects';
   projInner.appendChild(ul);
   projects.appendChild(title);
@@ -95,7 +81,7 @@ const loadProject = () => {
 };
 
 function init() {
-  loadProject();
+  loadProj();
 }
 
 init();

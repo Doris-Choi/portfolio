@@ -210,6 +210,7 @@ nav ul li:active {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid;
   color: #273c75;
+  cursor: pointer;
 }
 .skills .group ul li i {
   display: block;
@@ -258,14 +259,18 @@ nav ul li:active {
 .projects ul li {
   padding: 10px;
   background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 .projects ul li h4 {
-  margin: 60px 0 20px;
+  margin: 60px 0 0;
   font-size: 1.5rem;
   text-align: center;
 }
 .projects ul li div {
+  padding: 10px;
   color: #273c75;
+  text-align: center;
+  line-height: 1.4;
 }
 
 /* FOOTER */
@@ -279,4 +284,113 @@ footer {
   color: rgba(255, 255, 255, 0.5);
   text-indent: 200px;
   box-sizing: border-box;
+}
+
+/* MODAL */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal .modal-bg {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.modal .modal-box {
+  max-width: 50%;
+  position: relative;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.2s linear;
+}
+.modal .modal-box.fadeOut {
+  transform: translateY(30px);
+  animation: fadeOut 0.2s linear;
+}
+.modal .modal-box .modal-close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 2rem;
+  height: 2rem;
+  background: #273c75;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  font-size: 1.75rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.modal .modal-content {
+  min-width: 350px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.modal .modal-content h2 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+.modal .modal-content p {
+  padding-bottom: 0.5rem;
+  color: #273c75;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal .modal-content a {
+  display: block;
+  width: 100%;
+  padding: 10px 0 7px;
+  background: #273c75;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.modal .modal-content h3 {
+  margin: 1rem 0 5px;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.modal .modal-content .skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal .modal-content .skill-container li {
+  width: 50%;
+  margin: 3px 0;
+  list-style: disc inside;
+}
+.modal .modal-content .feat-container {
+}
+.modal .modal-content .feat-container li {
+  margin: 3px 0;
+  list-style: disc inside;
+  line-height: 1.4;
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px);
+  }
 }
